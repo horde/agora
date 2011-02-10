@@ -1,12 +1,6 @@
 <?php
-
-$block_name = _("Forums");
-
 /**
- * Agora's Forum Block Class
- *
- * This file provides a list of Agora forums through the Horde_Blocks, by
- * extending the Horde_Blocks class.
+ * Provides a list of Agora forums in a block item.
  *
  * Copyright 2003-2011 The Horde Project (http://www.horde.org/)
  *
@@ -15,34 +9,38 @@ $block_name = _("Forums");
  *
  * @author  Marko Djukic <marko@oblo.com>
  * @author  Jan Schneider <jan@horde.org>
- * @package Horde_Block
  */
-class Horde_Block_agora_forums extends Horde_Block
+class Agora_Block_Forums extends Horde_Block
 {
-
-    protected $_app = 'agora';
+    /**
+     */
+    public function getName()
+    {
+        return _("Forums");
+    }
 
     protected function _title()
     {
-        return Horde::url('forums.php', true)->link() . _("Forums") . '</a>';
+        return Horde::url('forums.php', true)->link() . $this->getName() . '</a>';
     }
 
     /**
-     *
-     * @return array
      */
     protected function _params()
     {
-        /* Display the last X number of threads. */
-        $forum_display = array();
-        $forum_display['name'] = _("Only display this many forums (0 to display all forums)");
-        $forum_display['type'] = 'int';
-        $forum_display['default'] = 0;
-        $forum_display['values'] = $GLOBALS['prefs']->getValue('forums_block_display');
-
-        return array('forum_display' => $forum_display);
+        return array(
+            /* Display the last X number of threads. */
+            'forum_display' => array(
+                $name = _("Only display this many forums (0 to display all forums)"),
+                $type = 'int',
+                $default = 0,
+                $values = $GLOBALS['prefs']->getValue('forums_block_display')
+            )
+        );
     }
 
+    /**
+     */
     protected function _content()
     {
         global $registry;

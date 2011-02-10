@@ -1,12 +1,7 @@
 <?php
-
-$block_name = _("Threads");
-
 /**
- * Agora Forum Thread Block Class
- *
- * This file provides an api to include an Agora forum's thread into any other
- * Horde app through the Horde_Blocks, by extending the Horde_Blocks class.
+ * Provide an API to include an Agora forum's thread into any other Horde
+ * app through a block.
  *
  * Copyright 2003-2011 The Horde Project (http://www.horde.org/)
  *
@@ -15,44 +10,48 @@ $block_name = _("Threads");
  *
  * @author  Marko Djukic <marko@oblo.com>
  * @author  Jan Schneider <jan@horde.org>
- * @package Horde_Block
  */
-class Horde_Block_agora_threads extends Horde_Block
+class Agora_Block_Threads extends Horde_Block
 {
     /**
+     * TODO
+     *
      * @var array
      */
     private $_threads = array();
 
     /**
-     * @var string
      */
-    protected $_app = 'agora';
+    public function getName()
+    {
+        return _("Threads");
+    }
 
     /**
      * @return array
      */
     protected function _params()
     {
+        $params = array();
+
         $forums = Agora_Messages::singleton();
 
         /* Get the list of forums to display. */
-        $forum_id = array(
+        $params['forum_id'] = array(
             'name' => _("Forum"),
             'type' => 'enum',
             'values' => $forums->getForums(0, false, 'forum_name', 0, !$GLOBALS['registry']->isAdmin()),
         );
 
         /* Display the last X number of threads. */
-        $thread_display = array(
+        $params['thread_display'] = array(
             'name' => _("Only display this many threads (0 to display all threads)"),
             'type' => 'int',
             'default' => 0,
             'values' => $GLOBALS['prefs']->getValue('threads_block_display'),
         );
 
-        return array('forum_id' => $forum_id,
-                     'thread_display' => $thread_display);
+        return $params;
     }
 
     /**
@@ -61,13 +60,13 @@ class Horde_Block_agora_threads extends Horde_Block
     protected function _title()
     {
         if (!isset($this->_params['forum_id'])) {
-            return _("Threads");
+            return $this->getName();
         }
 
         if (empty($this->_threads)) {
             $this->_threads = &Agora_Messages::singleton('agora', $this->_params['forum_id']);
             if ($this->_threads instanceof PEAR_Error) {
-                return _("Threads");
+                return $this->getName();
             }
         }
 
@@ -82,8 +81,6 @@ class Horde_Block_agora_threads extends Horde_Block
     }
 
     /**
-     * @return string
-     * @throws Horde_Block_Exception
      */
     protected function _content()
     {
