@@ -2,7 +2,9 @@
 /**
  * See horde/config/prefs.php for documentation on the structure of this file.
  *
- * $Id$
+ * IMPORTANT: Local overrides should be placed in prefs.local.php, or
+ * prefs-servername.php if the 'vhosts' setting has been enabled in Horde's
+ * configuration.
  */
 
 if ($GLOBALS['conf']['avatar']['allow_avatars']) {
@@ -281,3 +283,8 @@ $_prefs['comments_per_page'] = array(
     ),
     'desc' => _("Number of messages to display on each page")
 );
+
+/* Local overrides. */
+if (file_exists(dirname(__FILE__) . '/prefs.local.php')) {
+    include dirname(__FILE__) . '/prefs.local.php';
+}
