@@ -10,7 +10,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-13</date>
+ <date>2017-10-16</date>
  <version>
   <release>1.0.0alpha1</release>
   <api>1.0.0alpha1</api>
@@ -222,7 +222,7 @@
    <file name="moderate.php" role="horde" />
    <file name="moderators.php" role="horde" />
    <file name="owner.php" role="horde" />
-   <file name="README" role="doc" />
+   <file name="README.rst" role="doc" />
    <file name="search.php" role="horde" />
    <file name="threads.php" role="horde" />
    <file name="view.php" role="horde" />
@@ -249,7 +249,7 @@
    <install as="agora/moderate.php" name="moderate.php" />
    <install as="agora/moderators.php" name="moderators.php" />
    <install as="agora/owner.php" name="owner.php" />
-   <install as="README" name="README" />
+   <install as="README.rst" name="README.rst" />
    <install as="agora/search.php" name="search.php" />
    <install as="agora/threads.php" name="threads.php" />
    <install as="agora/view.php" name="view.php" />
@@ -363,7 +363,7 @@
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2017-10-13</date>
+   <date>2017-10-16</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * Initial release.
