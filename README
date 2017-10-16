@@ -30,16 +30,16 @@ The following documentation is available in the Agora distribution:
 
 :README_:            This file
 :COPYING_:           Copyright and license information
-:`docs/CHANGES`_:    Changes by release
-:`docs/CREDITS`_:    Project developers
-:`docs/INSTALL`_:    Installation instructions and notes
+:`doc/CHANGES`_:    Changes by release
+:`doc/CREDITS`_:    Project developers
+:`doc/INSTALL`_:    Installation instructions and notes
 
 
 Installation
 ============
 
 Instructions for installing Agora can be found in the file INSTALL_ in the
-``docs/`` directory of the Agora distribution.
+``doc/`` directory of the Agora distribution.
 
 
 Assistance
@@ -75,7 +75,7 @@ The Agora team
 
 .. _README: README
 .. _COPYING: http://www.horde.org/licenses/gpl
-.. _docs/CHANGES: CHANGES
-.. _docs/CREDITS: CREDITS
+.. _doc/CHANGES: CHANGES
+.. _doc/CREDITS: CREDITS
 .. _INSTALL:
-.. _docs/INSTALL: INSTALL
+.. _doc/INSTALL: INSTALL

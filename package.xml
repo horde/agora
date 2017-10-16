@@ -10,7 +10,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-01-31</date>
+ <date>2017-10-13</date>
  <version>
   <release>1.0.0alpha1</release>
   <api>1.0.0alpha1</api>
@@ -31,12 +31,12 @@
     <file name="menu.php.dist" role="horde" />
     <file name="prefs.php" role="horde" />
    </dir> <!-- /config -->
-   <dir name="docs">
+   <dir name="doc">
     <file name="CHANGES" role="doc" />
     <file name="CREDITS" role="doc" />
     <file name="INSTALL" role="doc" />
     <file name="TODO" role="doc" />
-   </dir> <!-- /docs -->
+   </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Block">
      <file name="Forums.php" role="horde" />
@@ -245,7 +245,7 @@
    <install as="agora/deleteforum.php" name="deleteforum.php" />
    <install as="agora/editforum.php" name="editforum.php" />
    <install as="agora/forums.php" name="forums.php" />
-   <install as="skeleton/index.php" name="index.php" />
+   <install as="agora/index.php" name="index.php" />
    <install as="agora/moderate.php" name="moderate.php" />
    <install as="agora/moderators.php" name="moderators.php" />
    <install as="agora/owner.php" name="owner.php" />
@@ -253,34 +253,34 @@
    <install as="agora/search.php" name="search.php" />
    <install as="agora/threads.php" name="threads.php" />
    <install as="agora/view.php" name="view.php" />
-   <install as="skeleton/config/.htaccess" name="config/.htaccess" />
-   <install as="skeleton/config/conf.xml" name="config/conf.xml" />
+   <install as="agora/config/.htaccess" name="config/.htaccess" />
+   <install as="agora/config/conf.xml" name="config/conf.xml" />
    <install as="agora/config/menu.php.dist" name="config/menu.php.dist" />
-   <install as="skeleton/config/prefs.php" name="config/prefs.php" />
-   <install as="CHANGES" name="docs/CHANGES" />
-   <install as="CREDITS" name="docs/CREDITS" />
-   <install as="INSTALL" name="docs/INSTALL" />
-   <install as="TODO" name="docs/TODO" />
-   <install as="skeleton/lib/.htaccess" name="lib/.htaccess" />
+   <install as="agora/config/prefs.php" name="config/prefs.php" />
+   <install as="CHANGES" name="doc/CHANGES" />
+   <install as="CREDITS" name="doc/CREDITS" />
+   <install as="INSTALL" name="doc/INSTALL" />
+   <install as="TODO" name="doc/TODO" />
+   <install as="agora/lib/.htaccess" name="lib/.htaccess" />
    <install as="agora/lib/Agora.php" name="lib/Agora.php" />
-   <install as="skeleton/lib/Api.php" name="lib/Api.php" />
-   <install as="skeleton/lib/Application.php" name="lib/Application.php" />
+   <install as="agora/lib/Api.php" name="lib/Api.php" />
+   <install as="agora/lib/Application.php" name="lib/Application.php" />
    <install as="agora/lib/Comments.php" name="lib/Comments.php" />
-   <install as="skeleton/lib/Driver.php" name="lib/Driver.php" />
-   <install as="skeleton/lib/Exception.php" name="lib/Exception.php" />
+   <install as="agora/lib/Driver.php" name="lib/Driver.php" />
+   <install as="agora/lib/Exception.php" name="lib/Exception.php" />
    <install as="agora/lib/prefs.php" name="lib/prefs.php" />
    <install as="agora/lib/View.php" name="lib/View.php" />
    <install as="agora/lib/Block/Forums.php" name="lib/Block/Forums.php" />
    <install as="agora/lib/Block/Thread.php" name="lib/Block/Thread.php" />
    <install as="agora/lib/Block/Threads.php" name="lib/Block/Threads.php" />
    <install as="agora/lib/Driver/SplitSql.php" name="lib/Driver/SplitSql.php" />
-   <install as="skeleton/lib/Driver/Sql.php" name="lib/Driver/Sql.php" />
-   <install as="skeleton/lib/Factory/Driver.php" name="lib/Factory/Driver.php" />
+   <install as="agora/lib/Driver/Sql.php" name="lib/Driver/Sql.php" />
+   <install as="agora/lib/Factory/Driver.php" name="lib/Factory/Driver.php" />
    <install as="agora/lib/Form/Forum.php" name="lib/Form/Forum.php" />
    <install as="agora/lib/Form/Message.php" name="lib/Form/Message.php" />
    <install as="agora/lib/Form/Search.php" name="lib/Form/Search.php" />
    <install as="agora/lib/Tree/Flat.php" name="lib/Tree/Flat.php" />
-   <install as="skeleton/locale/.htaccess" name="locale/.htaccess" />
+   <install as="agora/locale/.htaccess" name="locale/.htaccess" />
    <install as="agora/locale/agora.pot" name="locale/agora.pot" />
    <install as="agora/locale/de/LC_MESSAGES/agora.mo" name="locale/de/LC_MESSAGES/agora.mo" />
    <install as="agora/locale/de/LC_MESSAGES/agora.po" name="locale/de/LC_MESSAGES/agora.po" />
@@ -322,7 +322,7 @@
    <install as="agora/rss/messages.php" name="rss/messages.php" />
    <install as="agora/rss/threads.php" name="rss/threads.php" />
    <install as="agora/scripts/phorum2agora.php" name="scripts/phorum2agora.php" />
-   <install as="skeleton/templates/.htaccess" name="templates/.htaccess" />
+   <install as="agora/templates/.htaccess" name="templates/.htaccess" />
    <install as="agora/templates/ban.html.php" name="templates/ban.html.php" />
    <install as="agora/templates/forums.html.php" name="templates/forums.html.php" />
    <install as="agora/templates/moderate.html.php" name="templates/moderate.html.php" />
@@ -339,7 +339,7 @@
    <install as="agora/templates/messages/index.html.php" name="templates/messages/index.html.php" />
    <install as="agora/templates/messages/message.html.php" name="templates/messages/message.html.php" />
    <install as="agora/templates/messages/threads.html.php" name="templates/messages/threads.html.php" />
-   <install as="skeleton/themes/default/screen.css" name="themes/default/screen.css" />
+   <install as="agora/themes/default/screen.css" name="themes/default/screen.css" />
    <install as="agora/themes/default/graphics/agora.png" name="themes/default/graphics/agora.png" />
    <install as="agora/themes/default/graphics/favicon.ico" name="themes/default/graphics/favicon.ico" />
    <install as="agora/themes/default/graphics/flagged.png" name="themes/default/graphics/flagged.png" />
@@ -351,7 +351,7 @@
    <install as="agora/themes/default/graphics/reply.png" name="themes/default/graphics/reply.png" />
    <install as="agora/themes/default/graphics/thread.png" name="themes/default/graphics/thread.png" />
    <install as="agora/themes/default/graphics/threads.png" name="themes/default/graphics/threads.png" />
-   </filelist>
+  </filelist>
  </phprelease>
  <changelog>
   <release>
@@ -363,7 +363,7 @@
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2017-01-31</date>
+   <date>2017-10-13</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * Initial release.
