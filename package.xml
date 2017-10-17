@@ -33,9 +33,9 @@
    </dir> <!-- /config -->
    <dir name="doc">
     <file name="CHANGES" role="doc" />
-    <file name="CREDITS" role="doc" />
-    <file name="INSTALL" role="doc" />
-    <file name="TODO" role="doc" />
+    <file name="CREDITS.rst" role="doc" />
+    <file name="INSTALL.rst" role="doc" />
+    <file name="TODO.rst" role="doc" />
    </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Block">
@@ -247,9 +247,9 @@
    <install as="agora/config/prefs.php" name="config/prefs.php" />
    <install as="agora/deleteforum.php" name="deleteforum.php" />
    <install as="CHANGES" name="doc/CHANGES" />
-   <install as="CREDITS" name="doc/CREDITS" />
-   <install as="INSTALL" name="doc/INSTALL" />
-   <install as="TODO" name="doc/TODO" />
+   <install as="CREDITS.rst" name="doc/CREDITS.rst" />
+   <install as="INSTALL.rst" name="doc/INSTALL.rst" />
+   <install as="TODO.rst" name="doc/TODO.rst" />
    <install as="agora/editforum.php" name="editforum.php" />
    <install as="agora/forums.php" name="forums.php" />
    <install as="agora/index.php" name="index.php" />
