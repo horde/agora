@@ -21,7 +21,41 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* Initial release.
+* [jan] Add Ukrainian translation (Andriy Kopystyansky &lt;anri@polynet.lviv.ua&gt;).
+* [jan] Add Latvian translation (Jānis Eisaks &lt;jancs@dv.lv&gt;).
+* [jan] Provide default configuration files instead of .dist versions.
+* [duk] Convert Horde_Template to Horde_View (Duck &lt;duck@obala.net&gt;).
+* [duk] Convert DB to MDB2 (Duck &lt;duck@obala.net&gt;).
+* [duk] Convert to PHP 5 (Duck &lt;duck@obala.net&gt;).
+* [jan] Enable output compression.
+* [jan] Add Japanese translation (Takeshi Taguchi &lt;taguchi@tcltk.jp&gt;).
+* [cjh] Merge Horde_Template_Compiling to stable Agora branch as Agora_Template.
+* [mjr] Added batch api methods for retrieving message counts and threads for more than one forum at a time.
+* [jan] Add Hungarian translation (Garami Gábor &lt;hron@hronszoft.dyndns.biz&gt;).
+* [cjh] Migrate from DataTree to local SQL usage (Duck &lt;duck@obala.net&gt;).
+* [jan] Add Slovenian translation (Duck &lt;duck@obala.net&gt;).
+* [jan] Allow to manage forums and messages added throught the comments API.
+* [jan] Add CAPTCHA test with Figlet fonts.
+* [jmf] Implement search page.
+* [jan] Use &apos;rel="nofollow"&apos; link attributes to prevent spam if showing messages through the API.
+* [cjh] Add avatar support (Andrew Hosie &lt;ahosie@gmail.com&gt;).
+* [cjh] Use DataTree::sortByAttributes() to do more sorting in the database and avoid loading excess objects (Duck &lt;duck@obala.net&gt;).
+* [cjh] Work around IE bugs for threaded message views by having columns total 99% instead of 100% (Bug #1298).
+* [jan] Add Lithuanian translation (Vilius Sumskas &lt;vilius@lnk.lt&gt;).
+* [mdj] Add attachments and moderation.
+* [mms] Allow user to specify how many forums/threads to display in the block view.
+* [mms] Added paging of forum and thread pages.
+* [jan] Add Spanish translation (Manuel Perez Ayala &lt;mperaya@alcazaba.unex.es&gt;).
+* [jan] Add Traditional Chinese translation (Chih-Wei Yeh &lt;cwyeh@ccca.nctu.edu.tw&gt;).
+* [jan] Add sorting by thread.
+* [jan] Quote replied messages.
+* [jan] Add Finnish translation (Petteri Karttunen &lt;pkarttun@siba.fi&gt;).
+* [cjh] Add deletion of messages.
+* [mdj] Add Romanian translation (Eugen Hoanca &lt;eugenh@urban-grafx.ro&gt;).
+* [cjh] Fix permissions checking semantics.
+* [jan] Add German translation.
+* [jan] Add French translation (Florent Aide &lt;faide@alphacent.com&gt;).
+* [mdj] Initial import to CVS.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -366,7 +400,41 @@
    <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
-* Initial release.
+* [jan] Add Ukrainian translation (Andriy Kopystyansky &lt;anri@polynet.lviv.ua&gt;).
+* [jan] Add Latvian translation (Jānis Eisaks &lt;jancs@dv.lv&gt;).
+* [jan] Provide default configuration files instead of .dist versions.
+* [duk] Convert Horde_Template to Horde_View (Duck &lt;duck@obala.net&gt;).
+* [duk] Convert DB to MDB2 (Duck &lt;duck@obala.net&gt;).
+* [duk] Convert to PHP 5 (Duck &lt;duck@obala.net&gt;).
+* [jan] Enable output compression.
+* [jan] Add Japanese translation (Takeshi Taguchi &lt;taguchi@tcltk.jp&gt;).
+* [cjh] Merge Horde_Template_Compiling to stable Agora branch as Agora_Template.
+* [mjr] Added batch api methods for retrieving message counts and threads for more than one forum at a time.
+* [jan] Add Hungarian translation (Garami Gábor &lt;hron@hronszoft.dyndns.biz&gt;).
+* [cjh] Migrate from DataTree to local SQL usage (Duck &lt;duck@obala.net&gt;).
+* [jan] Add Slovenian translation (Duck &lt;duck@obala.net&gt;).
+* [jan] Allow to manage forums and messages added throught the comments API.
+* [jan] Add CAPTCHA test with Figlet fonts.
+* [jmf] Implement search page.
+* [jan] Use &apos;rel="nofollow"&apos; link attributes to prevent spam if showing messages through the API.
+* [cjh] Add avatar support (Andrew Hosie &lt;ahosie@gmail.com&gt;).
+* [cjh] Use DataTree::sortByAttributes() to do more sorting in the database and avoid loading excess objects (Duck &lt;duck@obala.net&gt;).
+* [cjh] Work around IE bugs for threaded message views by having columns total 99% instead of 100% (Bug #1298).
+* [jan] Add Lithuanian translation (Vilius Sumskas &lt;vilius@lnk.lt&gt;).
+* [mdj] Add attachments and moderation.
+* [mms] Allow user to specify how many forums/threads to display in the block view.
+* [mms] Added paging of forum and thread pages.
+* [jan] Add Spanish translation (Manuel Perez Ayala &lt;mperaya@alcazaba.unex.es&gt;).
+* [jan] Add Traditional Chinese translation (Chih-Wei Yeh &lt;cwyeh@ccca.nctu.edu.tw&gt;).
+* [jan] Add sorting by thread.
+* [jan] Quote replied messages.
+* [jan] Add Finnish translation (Petteri Karttunen &lt;pkarttun@siba.fi&gt;).
+* [cjh] Add deletion of messages.
+* [mdj] Add Romanian translation (Eugen Hoanca &lt;eugenh@urban-grafx.ro&gt;).
+* [cjh] Fix permissions checking semantics.
+* [jan] Add German translation.
+* [jan] Add French translation (Florent Aide &lt;faide@alphacent.com&gt;).
+* [mdj] Initial import to CVS.
    </notes>
   </release>
  </changelog>
