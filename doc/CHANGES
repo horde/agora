@@ -1,6 +1,6 @@
---------
-v1.0-git
---------
+----------------
+v1.0.0alpha1-git
+----------------
 
 [jan] Add Ukrainian translation (Andriy Kopystyansky <anri@polynet.lviv.ua>).
 [jan] Add Latvian translation (Jānis Eisaks <jancs@dv.lv>).
@@ -22,14 +22,14 @@ v1.0-git
 [jan] Use 'rel="nofollow"' link attributes to prevent spam if showing messages
       through the API.
 [cjh] Add avatar support (Andrew Hosie <ahosie@gmail.com>).
-[cjh] Use DataTree::sortByAttributes() to do more sorting in the database
-      and avoid loading excess objects (Duck <duck@obala.net>).
-[cjh] Work around IE bugs for threaded message views by having columns
-      total 99% instead of 100% (Bug #1298).
+[cjh] Use DataTree::sortByAttributes() to do more sorting in the database and
+      avoid loading excess objects (Duck <duck@obala.net>).
+[cjh] Work around IE bugs for threaded message views by having columns total
+      99% instead of 100% (Bug #1298).
 [jan] Add Lithuanian translation (Vilius Sumskas <vilius@lnk.lt>).
 [mdj] Add attachments and moderation.
-[mms] Allow user to specify how many forums/threads to display in the
-      block view.
+[mms] Allow user to specify how many forums/threads to display in the block
+      view.
 [mms] Added paging of forum and thread pages.
 [jan] Add Spanish translation (Manuel Perez Ayala <mperaya@alcazaba.unex.es>).
 [jan] Add Traditional Chinese translation (Chih-Wei Yeh
