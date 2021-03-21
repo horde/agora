@@ -10,7 +10,7 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-11-11</date>
+ <date>2021-03-21</date>
  <version>
   <release>1.0.0alpha1</release>
   <api>1.0.0alpha1</api>
@@ -59,6 +59,11 @@
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
+   <dir name=".github">
+    <dir name="workflows">
+     <file name="phpdoc.yml" role="horde" />
+    </dir> <!-- /.github/workflows -->
+   </dir> <!-- /.github -->
    <dir name="config">
     <file name=".htaccess" role="horde" />
     <file name="conf.xml" role="horde" />
@@ -265,7 +270,7 @@
  <dependencies>
   <required>
    <php>
-    <min>5.3.0</min>
+    <min>7.0.0</min>
    </php>
    <pearinstaller>
     <min>1.7.0</min>
@@ -274,6 +279,7 @@
  </dependencies>
  <phprelease>
   <filelist>
+   <install as="agora/.github/workflows/phpdoc.yml" name=".github/workflows/phpdoc.yml" />
    <install as="agora/ban.php" name="ban.php" />
    <install as="agora/config/.htaccess" name="config/.htaccess" />
    <install as="agora/config/conf.xml" name="config/conf.xml" />
@@ -397,7 +403,7 @@
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2017-11-11</date>
+   <date>2021-03-21</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [jan] Add Ukrainian translation (Andriy Kopystyansky &lt;anri@polynet.lviv.ua&gt;).

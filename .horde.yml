@@ -23,4 +23,8 @@ license:
   uri: http://www.horde.org/licenses/gpl
 dependencies:
   required:
-    php: ^5.3
+    php: ^7
+    composer:
+      horde/horde: ^6
+      horde/core: ^3
+      horde/db: ^3

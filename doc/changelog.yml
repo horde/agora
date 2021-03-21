@@ -9,6 +9,7 @@
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
   notes: |
+    [rla] Add H6 composer compatible metadata
     [jan] Add Ukrainian translation (Andriy Kopystyansky <anri@polynet.lviv.ua>).
     [jan] Add Latvian translation (Jānis Eisaks <jancs@dv.lv>).
     [jan] Provide default configuration files instead of .dist versions.
