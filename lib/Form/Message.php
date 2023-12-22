@@ -11,7 +11,7 @@
  */
 class Agora_Form_Message extends Horde_Form {
 
-    function validate(&$vars, $canAutoFill = false)
+    function validate($vars = null, $canAutoFill = false)
     {
         global $conf;
 

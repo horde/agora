@@ -42,7 +42,7 @@ class Agora_Form_Forum extends Horde_Form {
 
     /**
      */
-    function execute(&$vars)
+    function execute(&$vars = null)
     {
         global $forums;
 
