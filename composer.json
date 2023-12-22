@@ -14,17 +14,12 @@
     "version": "1.0.0alpha1",
     "time": "2017-11-11",
     "repositories": [
-        {
-            "type": "pear",
-            "url": "https://pear.horde.org"
-        }
     ],
     "require": {
-        "php": "^5.3"
+        "php": "^5.3",
+        "horde/horde": "^5"
     },
     "replace": {
-        "pear-pear.horde.org/agora": "1.*",
-        "pear-horde/agora": "1.*"
     },
     "autoload": {
         "psr-0": {
