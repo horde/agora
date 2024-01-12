@@ -38,7 +38,7 @@ class Agora_Application extends Horde_Registry_Application
 {
     /**
      */
-    public $version = 'H5 (1.0-git)';
+    public $version = 'H6 (1.0-git)';
 
     /**
      */
