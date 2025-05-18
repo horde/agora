@@ -13,7 +13,7 @@ class Agora_Form_Forum extends Horde_Form {
 
     /**
      */
-    function __construct(&$vars, $title)
+    function __construct($vars, $title)
     {
         global $forums, $conf;
 
@@ -42,7 +42,7 @@ class Agora_Form_Forum extends Horde_Form {
 
     /**
      */
-    function execute(&$vars)
+    function execute($vars)
     {
         global $forums;
 

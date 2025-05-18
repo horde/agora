@@ -11,7 +11,7 @@
  */
 class Agora_Form_Message extends Horde_Form {
 
-    function validate(&$vars, $canAutoFill = false)
+    function validate($vars, $canAutoFill = false)
     {
         global $conf;
 
@@ -27,7 +27,7 @@ class Agora_Form_Message extends Horde_Form {
         return true;
     }
 
-    function &getRenderer($params = array())
+    function getRenderer($params = array())
     {
         $renderer = new Horde_Form_Renderer_MessageForm($params);
         return $renderer;
@@ -42,7 +42,7 @@ class Agora_Form_Message extends Horde_Form {
  */
 class Horde_Form_Renderer_MessageForm extends Horde_Form_Renderer {
 
-    function _renderVarInputEnd(&$form, &$var, &$vars)
+    function _renderVarInputEnd($form, $var, $vars)
     {
         if ($var->hasDescription()) {
             // The description is actually the quote button

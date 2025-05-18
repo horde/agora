@@ -26,7 +26,7 @@ class Agora_Form_Search extends Horde_Form {
     /**
      * Set up forum object
      */
-    function __construct(&$vars, $scope)
+    function __construct($vars, $scope)
     {
         parent::__construct($vars, _("Search Forums"));
 
@@ -58,7 +58,7 @@ class Agora_Form_Search extends Horde_Form {
     /**
      * Trick getInfo to catch pager parameters
      */
-    function getInfo($vars, &$info)
+    function getInfo($vars, $info)
     {
         parent::getInfo($vars, $info);
 
