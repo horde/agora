@@ -58,14 +58,15 @@ class Agora_Form_Search extends Horde_Form {
     /**
      * Trick getInfo to catch pager parameters
      */
-    function getInfo($vars, $info)
+    public function getInfo($vars = null, $info = [])
     {
-        parent::getInfo($vars, $info);
+        $info = parent::getInfo($vars, $info);
 
         if (!$this->isSubmitted()) {
             foreach ($info as $key => $val) {
                 $info[$key] = $vars->get($key);
             }
         }
+        return $info;
     }
 }
