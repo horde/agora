@@ -71,7 +71,7 @@ $form = $messages->getForm($vars, $title, $message_id);
 
 /* Validate the form. */
 if ($form->validate($vars)) {
-    $form->getInfo($vars, $info);
+    $info = $form->getInfo($vars, $info);
 
     /* Try and store this message and get back a new message_id */
     $message_id = $messages->saveMessage($info);

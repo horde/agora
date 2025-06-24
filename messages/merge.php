@@ -62,7 +62,7 @@ if ($vars->get('new_thread_id')) {
 
 /* Validate the form. */
 if ($form->validate()) {
-    $form->getInfo($vars, $info);
+    $info = $form->getInfo($vars, $info);
 
     if ($vars->get('submitbutton') == _("Merge")) {
         $merge = $messages->mergeThread($message_id, $info['after_message_id']);

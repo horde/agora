@@ -45,7 +45,7 @@ $form->addHidden('', 'scope', 'text', false);
 
 /* Validate the form. */
 if ($form->validate()) {
-    $form->getInfo($vars, $info);
+    $info = $form->getInfo($vars, $info);
 
     if ($vars->get('submitbutton') == _("Split")) {
         $split = $messages->splitThread($message_id);

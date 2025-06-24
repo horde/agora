@@ -480,7 +480,7 @@ class Agora_Api extends Horde_Registry_Api
 
         /* Validate the form. */
         if ($form->validate($vars)) {
-            $form->getInfo($vars, $info);
+            $info = $form->getInfo($vars, $info);
 
             if (isset($info['new_forum'])) {
                 $forum_info = $this->prepareFormData($scope, false, array('forum_name' => $info['new_forum']), $callback);
