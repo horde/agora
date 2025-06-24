@@ -24,7 +24,7 @@ $view = new Agora_View();
 
 if ($form->isSubmitted() || $thread_page != null) {
 
-    $info = $form->getInfo($vars, $info);
+    $info = $form->getInfo($vars);
 
     if (!empty($info['keywords'])) {
         $info['keywords'] = preg_split('/\s+/', $info['keywords']);

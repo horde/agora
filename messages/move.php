@@ -47,7 +47,7 @@ $v->setDefault($forum_id);
 
 /* Validate the form. */
 if ($form->validate()) {
-    $info = $form->getInfo($vars, $info);
+    $info = $form->getInfo($vars);
 
     if ($vars->get('submitbutton') == _("Move")) {
         $move = $messages->moveThread($message_id, $info['new_forum_id']);

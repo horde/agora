@@ -45,7 +45,7 @@ $v = $form->addVariable(_("Allow replies in this thread"), 'message_lock', 'radi
 $v->setDefault('0');
 
 if ($form->validate()) {
-    $info = $form->getInfo($vars, $info);
+    $info = $form->getInfo($vars);
 
     /* Try and delete this message. */
     $result = $messages->setThreadLock($message_id, $info['message_lock']);

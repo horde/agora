@@ -46,7 +46,7 @@ class Agora_Form_Forum extends Horde_Form {
     {
         global $forums;
 
-        $info = $this->getInfo($vars, $info);
+        $info = $this->getInfo($vars);
         return $forums->saveForum($info);
     }
 
