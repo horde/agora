@@ -5,15 +5,18 @@
  *
  * Usage example:
  *      Move fist 1000 messages from phorum ID 5 to agora ID 1
- *      php phorum2agora.php -p 5 -a 1 -t p5_messages -f 0 -c 1000
+ *      agora-phorum2agora -p 5 -a 1 -t p5_messages -f 0 -c 1000
  *
- * To move all phorum you can use loop semgents like:
+ * To move all phorum you can use loop segments like:
  *  for i in 0 1 2 3 4 5 6 7; do
- *      php phorum2agora.php -p 7 -a 8 -f $i -c 1000;
+ *      agora-phorum2agora -p 7 -a 8 -f $i -c 1000;
  *  done
  *
  * TODO: Moderation, attachments, ID swaping
  */
+
+use Horde\Argv\Parser;
+use Horde\Argv\Option;
 
 require_once __DIR__ . '/../lib/Application.php';
 Horde_Registry::appInit('agora', array('cli' => true));
@@ -21,68 +24,54 @@ Horde_Registry::appInit('agora', array('cli' => true));
 /* Open Agora database. */
 $db_agora = $db_phorum = $injector->getInstance('Horde_Core_Factory_DbPear')->create();
 
-// We accept the user name on the command-line.
-$ret = Console_Getopt::getopt(Console_Getopt::readPHPArgv(), 'h:p:a:t:f:c:',
-                              array('help', 'phorum_id=', 'agora_id=', 'phorum_table=', 'from=', 'count='));
+// Parse command-line options using Horde\Argv\Parser
+$parser = new Parser([
+    'usage' => '%prog [OPTIONS]',
+    'description' => 'Migrate messages from Phorum 5 to Agora preserving message IDs',
+    'optionList' => [
+        new Option('-p', '--phorum_id', [
+            'type' => 'int',
+            'dest' => 'phorum_id',
+            'help' => 'Phorum forum ID to read messages from',
+            'metavar' => 'ID'
+        ]),
+        new Option('-a', '--agora_id', [
+            'type' => 'int',
+            'dest' => 'agora_id',
+            'help' => 'Agora forum ID to save messages to',
+            'metavar' => 'ID'
+        ]),
+        new Option('-t', '--phorum_table', [
+            'type' => 'string',
+            'dest' => 'phorum_table',
+            'default' => 'p5_messages',
+            'help' => 'Phorum messages tablename (default: p5_messages)',
+            'metavar' => 'TABLE'
+        ]),
+        new Option('-f', '--from', [
+            'type' => 'int',
+            'dest' => 'from',
+            'default' => 0,
+            'help' => 'Offset from where to start reading messages (default: 0)',
+            'metavar' => 'OFFSET'
+        ]),
+        new Option('-c', '--count', [
+            'type' => 'int',
+            'dest' => 'count',
+            'default' => 100,
+            'help' => 'Number of messages to move at once (default: 100)',
+            'metavar' => 'COUNT'
+        ])
+    ]
+]);
 
-if ($ret instanceof PEAR_Error) {
-    $error = _("Couldn't read command-line options.");
-    Horde::log($error, 'DEBUG');
-    $cli->fatal($error);
-}
+list($opts, $args) = $parser->parseArgs();
 
-// Show help and exit if no arguments were set.
-list($opts, $args) = $ret;
-if (!$opts) {
-    showHelp();
-    exit;
-}
-
-foreach ($opts as $opt) {
-    list($optName, $optValue) = $opt;
-    switch ($optName) {
-    case 'p':
-    case '--phorum_id':
-        $phorum_id = $optValue;
-        break;
-
-    case 'a':
-    case '--agora_id':
-        $agora_id = $optValue;
-        break;
-
-    case 't':
-    case '--phorum_table':
-        $phorum_table = $optValue;
-        break;
-
-    case 'f':
-    case '--from':
-        $from = $optValue;
-        break;
-
-    case 'c':
-    case '--count':
-        $count = $optValue;
-        break;
-
-    case 'h':
-    case '--help':
-        showHelp();
-        exit;
-    }
-}
-
-/* Set up defaults */
-if (empty($phorum_table)) {
-    $phorum_table = 'p5_messages';
-}
-if (empty($from)) {
-    $cfrom = 0;
-}
-if (empty($count)) {
-    $cfrom = 100;
-}
+$phorum_id = $opts->phorum_id;
+$agora_id = $opts->agora_id;
+$phorum_table = $opts->phorum_table;
+$from = $opts->from;
+$count = $opts->count;
 
 /* Get phorum messages data */
 $sql = 'SELECT message_id, thread, author, subject, body, '
@@ -165,24 +154,4 @@ function makeParents($thread_id, $message_id)
     } else {
         return ':' . implode(':', $mesages);
     }
-}
-
-/**
- * Show the command line arguments that the script accepts.
- */
-function showHelp()
-{
-    global $cli;
-
-    $cli->writeln(sprintf(_("Usage: %s [OPTIONS]..."), basename(__FILE__)));
-    $cli->writeln();
-    $cli->writeln(_("Mandatory arguments to long options are mandatory for short options too."));
-    $cli->writeln();
-    $cli->writeln(_("-h, --help                   Show this help"));
-    $cli->writeln(_("-p, --phorum_id[=pid]        Phorum forum id to read message from"));
-    $cli->writeln(_("-a, --agora_id[=aid]         Agora forum id to save message to"));
-    $cli->writeln(_("-t, --phorum_table[=table]   Phorum messages tablename"));
-    $cli->writeln(_("-f, --from[=offset]          Offset from where to start to read messages"));
-    $cli->writeln(_("-c, --count[=messages]       Number of messages to move at once"));
-    $cli->writeln();
 }
