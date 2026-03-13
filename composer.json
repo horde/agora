@@ -20,15 +20,19 @@
     ],
     "require": {
         "horde/horde-installer-plugin": "*",
-        "php": "^7",
+        "php": "^8",
         "horde/horde": "^6",
+        "horde/base": "^6",
         "horde/core": "^3",
         "horde/db": "^3"
     },
     "suggest": {},
     "autoload": {
-        "psr-0": {
-            "Agora": "lib/"
+        "classmap": [
+            "lib/"
+        ],
+        "psr-4": {
+            "Horde\\Agora\\": "src/"
         }
     }
 }
