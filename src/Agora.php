@@ -10,7 +10,7 @@ declare(strict_types=1);
  *
  * @category Horde
  * @package  Agora
- * @author   Ralf Lang <lang@b1-systems.de>
+ * @author   Ralf Lang <ralf.lang@ralf-lang.de>
  * @license  http://www.horde.org/licenses/gpl GPL
  */
 
@@ -24,7 +24,7 @@ namespace Horde\Agora;
  *
  * @category Horde
  * @package  Agora
- * @author   Ralf Lang <lang@b1-systems.de>
+ * @author   Ralf Lang <ralf.lang@ralf-lang.de>
  * @license  http://www.horde.org/licenses/gpl GPL
  */
 class Agora

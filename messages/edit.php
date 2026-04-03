@@ -120,7 +120,13 @@ $notification->notify(array('listeners' => 'status'));
 $view->notify = Horde::endBuffer();
 
 Horde::startBuffer();
-$form->renderActive(null, $vars, Horde::url('messages/edit.php'), 'post');
+$form->renderActive(
+    renderer: null,
+    vars: $vars,
+    action: Horde::url('messages/edit.php'),
+    method: 'post',
+    enctype: 'multipart/form-data'
+);
 $view->formbox = Horde::endBuffer();
 
 $page_output->header();
