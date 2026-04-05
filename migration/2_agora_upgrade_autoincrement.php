@@ -20,19 +20,19 @@ class AgoraUpgradeAutoIncrement extends Horde_Db_Migration_Base
     public function up()
     {
         $this->changeColumn('agora_files', 'file_id', 'autoincrementKey');
-        try {
+        if (in_array('agora_files_seq', $this->tables())) {
             $this->dropTable('agora_files_seq');
-        } catch (Horde_Db_Exception $e) {}
+        }
 
         $this->changeColumn('agora_forums', 'forum_id', 'autoincrementKey');
-        try {
+        if (in_array('agora_forums_seq', $this->tables())) {
             $this->dropTable('agora_forums_seq');
-        } catch (Horde_Db_Exception $e) {}
+        }
 
         $this->changeColumn('agora_messages', 'message_id', 'autoincrementKey');
-        try {
+        if (in_array('agora_messages_seq', $this->tables())) {
             $this->dropTable('agora_messages_seq');
-        } catch (Horde_Db_Exception $e) {}
+        }
     }
 
     /**
