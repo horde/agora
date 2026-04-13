@@ -34,12 +34,12 @@ if (!$rss) {
     $rss = '<?xml version="1.0" encoding="UTF-8" ?>
     <rss version="2.0">
         <channel>
-        <title>' . htmlspecialchars($message['message_subject']) . '</title>
+        <title>' . htmlspecialchars($message['message_subject'] ?? '') . '</title>
         <language>' . str_replace('_', '-', strtolower($registry->preferredLang())) . '</language>
         <lastBuildDate>' . date('r') . '</lastBuildDate>
-        <description>' . htmlspecialchars($message['message_subject']) . '</description>
+        <description>' . htmlspecialchars($message['message_subject'] ?? '') . '</description>
         <link>' . Horde::url('index.php', true, -1) . '</link>
-        <generator>' . htmlspecialchars($registry->get('name')) . '</generator>';
+        <generator>' . htmlspecialchars($registry->get('name') ?? '') . '</generator>';
 
     foreach ($threads_list as $thread) {
         $url = Horde::url('messages/index.php', true, -1);
