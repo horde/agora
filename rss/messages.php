@@ -46,8 +46,8 @@ if (!$rss) {
         $url = Agora::setAgoraId($forum_id, $thread['message_id'], $url, $scope, true);
         $rss .= '
         <item>
-            <title>' . htmlspecialchars($thread['message_subject']) . ' </title>
-            <description>' . htmlspecialchars(trim($thread['body'])) . ' </description>
+            <title>' . htmlspecialchars($thread['message_subject'] ?? '') . ' </title>
+            <description>' . htmlspecialchars(trim($thread['body'] ?? '')) . ' </description>
             <link>' . $url . '</link>
         </item>';
     }
