@@ -76,7 +76,7 @@ $view->notify = Horde::endBuffer();
 
 $view->message_subject = $message['message_subject'];
 $view->message_author = $message['message_author'];
-$view->message_date = strftime($prefs->getValue('date_format'), $message['message_timestamp']);
+$view->message_date = \Horde\Date\Format::formatDate($message['message_timestamp'], $prefs->getValue('date_format'), $GLOBALS['language'] ?? 'en_US');
 $view->message_body = Agora_Driver::formatBody($message['body']);
 
 $page_output->header();

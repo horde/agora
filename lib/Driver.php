@@ -510,7 +510,7 @@ class Agora_Driver {
         /* Prepare the message quite body . */
         $message['body'] = sprintf(_("Posted by %s on %s"),
                                    htmlspecialchars($message['message_author']),
-                                   strftime($GLOBALS['prefs']->getValue('date_format'), $message['message_timestamp']))
+                                   \Horde\Date\Format::formatDate($message['message_timestamp'], $GLOBALS['prefs']->getValue('date_format'), $GLOBALS['language'] ?? 'en_US'))
             . "\n-------------------------------------------------------\n"
             . $message['body'];
         $message['body'] = "\n> " . Horde_String::wrap($message['body'], 60, "\n> ");
@@ -1574,7 +1574,7 @@ class Agora_Driver {
      */
     public function dateFormat($timestamp)
     {
-        return strftime($GLOBALS['prefs']->getValue('date_format'), $timestamp)
+        return \Horde\Date\Format::formatDate($timestamp, $GLOBALS['prefs']->getValue('date_format'), $GLOBALS['language'] ?? 'en_US')
             . ' '
             . (date($GLOBALS['prefs']->getValue('twentyFour') ? 'G:i' : 'g:ia', $timestamp));
     }
